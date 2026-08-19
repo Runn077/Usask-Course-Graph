@@ -10,9 +10,9 @@ function App() {
     return (
         <Layout>
             <Routes>
-                <Route path="/" element={<GraphPage />} />
+                <Route path="/" element={<HeatmapPage />} />
+                <Route path="/graph" element={<GraphPage />} />
                 <Route path="/course/:courseId" element={<CoursePage />} />
-                <Route path="/heatmap" element={<HeatmapPage />} />
                 <Route path="/list" element={<ListPage />} />
                 <Route path="/about" element={<AboutPage />} />
             </Routes>

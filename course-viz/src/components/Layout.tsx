@@ -22,13 +22,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     const activePath = location.pathname.replace(/\/+$/, '') || '/'
     const activeTab = activePath.startsWith('/course')
         ? null
-        : activePath === '/heatmap'
-        ? 'heatmap'
+        : activePath === '/graph'
+        ? 'graph'
         : activePath === '/list'
         ? 'list'
         : activePath === '/about'
         ? 'about'
-        : 'graph'
+        : 'heatmap'
 
     useEffect(() => {
         setVisibleResults(10);
@@ -211,10 +211,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 flexShrink: 0,
                 borderBottom: '1px solid var(--border)',
             }}>
-                {(['graph', 'heatmap', 'list', 'about'] as const).map(tab => (
+                {(['heatmap', 'graph' , 'list', 'about'] as const).map(tab => (
                     <button
                         key={tab}
-                        onClick={() => navigate(tab === 'graph' ? '/' : `/${tab}`)}
+                        onClick={() => navigate(tab === 'heatmap' ? '/' : `/${tab}`)}
                         style={{
                             background: 'none',
                             border: 'none',
